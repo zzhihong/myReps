@@ -1,0 +1,563 @@
+<definitions name='ManageUserInfoWebServiceWS' targetNamespace='http://ManageUserInfoWebServiceWS' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://ManageUserInfoWebServiceWS' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types>
+  <xs:schema targetNamespace='http://ManageUserInfoWebServiceWS' version='1.0' xmlns:tns='http://ManageUserInfoWebServiceWS' xmlns:xs='http://www.w3.org/2001/XMLSchema'>
+   <xs:element name='ICT_GetPhoneVerificationCode' type='tns:ICT_GetPhoneVerificationCode'/>
+   <xs:element name='ICT_GetPhoneVerificationCodeResponse' type='tns:ICT_GetPhoneVerificationCodeResponse'/>
+   <xs:element name='ICT_LogOutUser' type='tns:ICT_LogOutUser'/>
+   <xs:element name='ICT_LogOutUserResponse' type='tns:ICT_LogOutUserResponse'/>
+   <xs:element name='ICT_QueryBlackList' type='tns:ICT_QueryBlackList'/>
+   <xs:element name='ICT_QueryBlackListResponse' type='tns:ICT_QueryBlackListResponse'/>
+   <xs:element name='ICT_QueryBundlingMobile' type='tns:ICT_QueryBundlingMobile'/>
+   <xs:element name='ICT_QueryBundlingMobileResponse' type='tns:ICT_QueryBundlingMobileResponse'/>
+   <xs:element name='ICT_QueryPassengerInfo' type='tns:ICT_QueryPassengerInfo'/>
+   <xs:element name='ICT_QueryPassengerInfoResponse' type='tns:ICT_QueryPassengerInfoResponse'/>
+   <xs:element name='ICT_QueryUserInfo' type='tns:ICT_QueryUserInfo'/>
+   <xs:element name='ICT_QueryUserInfoResponse' type='tns:ICT_QueryUserInfoResponse'/>
+   <xs:element name='ICT_SynchronizedUserByRegister' type='tns:ICT_SynchronizedUserByRegister'/>
+   <xs:element name='ICT_SynchronizedUserByRegisterResponse' type='tns:ICT_SynchronizedUserByRegisterResponse'/>
+   <xs:element name='ICT_UnbundlMobile' type='tns:ICT_UnbundlMobile'/>
+   <xs:element name='ICT_UnbundlMobileResponse' type='tns:ICT_UnbundlMobileResponse'/>
+   <xs:element name='ICT_UpdateMobileStatus' type='tns:ICT_UpdateMobileStatus'/>
+   <xs:element name='ICT_UpdateMobileStatusResponse' type='tns:ICT_UpdateMobileStatusResponse'/>
+   <xs:element name='ICT_VerifyRegisterUserStatus' type='tns:ICT_VerifyRegisterUserStatus'/>
+   <xs:element name='ICT_VerifyRegisterUserStatusResponse' type='tns:ICT_VerifyRegisterUserStatusResponse'/>
+   <xs:complexType name='ICT_QueryUserInfo'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='commonHeader' type='tns:commonHeader'/>
+     <xs:element minOccurs='0' name='registerUser' type='tns:registerUser'/>
+     <xs:element minOccurs='0' name='tranData' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='commonHeader'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='bureau_code' type='xs:string'/>
+     <xs:element minOccurs='0' name='operatorNo' type='xs:string'/>
+     <xs:element minOccurs='0' name='srcIP' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='registerUser'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='address' type='xs:string'/>
+     <xs:element minOccurs='0' name='born_date' type='xs:string'/>
+     <xs:element minOccurs='0' name='check_code' type='xs:string'/>
+     <xs:element minOccurs='0' name='check_status' type='xs:string'/>
+     <xs:element minOccurs='0' name='check_status_name' type='xs:string'/>
+     <xs:element minOccurs='0' name='country' type='xs:string'/>
+     <xs:element minOccurs='0' name='country_name' type='xs:string'/>
+     <xs:element minOccurs='0' name='ctext' type='xs:string'/>
+     <xs:element minOccurs='0' name='email' type='xs:string'/>
+     <xs:element minOccurs='0' name='encourage_flag' type='xs:string'/>
+     <xs:element minOccurs='0' name='first_letter' type='xs:string'/>
+     <xs:element minOccurs='0' name='flag' type='xs:string'/>
+     <xs:element minOccurs='0' name='IVR_passwd' type='xs:string'/>
+     <xs:element minOccurs='0' name='id_no' type='xs:string'/>
+     <xs:element minOccurs='0' name='id_type' type='xs:string'/>
+     <xs:element minOccurs='0' name='id_type_name' type='xs:string'/>
+     <xs:element minOccurs='0' name='if_receive' type='xs:string'/>
+     <xs:element minOccurs='0' name='if_receive_name' type='xs:string'/>
+     <xs:element minOccurs='0' name='is_active' type='xs:string'/>
+     <xs:element minOccurs='0' name='last_login_time' type='xs:string'/>
+     <xs:element minOccurs='0' name='password' type='xs:string'/>
+     <xs:element minOccurs='0' name='password_new' type='xs:string'/>
+     <xs:element minOccurs='0' name='phone' type='xs:string'/>
+     <xs:element minOccurs='0' name='phone_flag' type='xs:string'/>
+     <xs:element minOccurs='0' name='postalcode' type='xs:string'/>
+     <xs:element minOccurs='0' name='pwd_answer' type='xs:string'/>
+     <xs:element minOccurs='0' name='pwd_question' type='xs:string'/>
+     <xs:element minOccurs='0' name='register_name' type='xs:string'/>
+     <xs:element minOccurs='0' name='revSm_code' type='xs:string'/>
+     <xs:element minOccurs='0' name='sex_code' type='xs:string'/>
+     <xs:element minOccurs='0' name='user_id' type='xs:string'/>
+     <xs:element minOccurs='0' name='user_name' type='xs:string'/>
+     <xs:element minOccurs='0' name='user_sex' type='xs:string'/>
+     <xs:element minOccurs='0' name='user_status' type='xs:string'/>
+     <xs:element minOccurs='0' name='user_type' type='xs:string'/>
+     <xs:element minOccurs='0' name='zzk_ccsj' type='xs:string'/>
+     <xs:element minOccurs='0' name='zzk_countryCode' type='xs:string'/>
+     <xs:element minOccurs='0' name='zzk_countryname' type='xs:string'/>
+     <xs:element minOccurs='0' name='zzk_id_no' type='xs:string'/>
+     <xs:element minOccurs='0' name='zzk_id_type' type='xs:string'/>
+     <xs:element minOccurs='0' name='zzk_id_type_name' type='xs:string'/>
+     <xs:element minOccurs='0' name='zzk_name' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='ICT_QueryUserInfoResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='tns:responseEntityRegisterUser'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='responseEntityRegisterUser'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='header' type='tns:exceptionEntity'/>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='registerUserList' nillable='true' type='tns:registerUser'/>
+     <xs:element minOccurs='0' name='tranData' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='exceptionEntity'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='errorCode' type='xs:string'/>
+     <xs:element minOccurs='0' name='errorMessage' type='xs:string'/>
+     <xs:element minOccurs='0' name='status' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='ICT_QueryPassengerInfo'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='commonHeader' type='tns:commonHeader'/>
+     <xs:element minOccurs='0' name='registerUser' type='tns:registerUser'/>
+     <xs:element minOccurs='0' name='tranData' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='ICT_QueryPassengerInfoResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='tns:responseEntityPassenger'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='responseEntityPassenger'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='header' type='tns:exceptionEntity'/>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='passengerList' nillable='true' type='tns:passengerDTO'/>
+     <xs:element minOccurs='0' name='tranData' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='passengerDTO'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='address' type='xs:string'/>
+     <xs:element minOccurs='0' name='born_date' type='xs:string'/>
+     <xs:element minOccurs='0' name='check_status' type='xs:string'/>
+     <xs:element minOccurs='0' name='check_status_name' type='xs:string'/>
+     <xs:element minOccurs='0' name='code' type='xs:string'/>
+     <xs:element minOccurs='0' name='country' type='xs:string'/>
+     <xs:element minOccurs='0' name='country_name' type='xs:string'/>
+     <xs:element minOccurs='0' name='ctext' type='xs:string'/>
+     <xs:element minOccurs='0' name='email' type='xs:string'/>
+     <xs:element minOccurs='0' name='first_letter' type='xs:string'/>
+     <xs:element minOccurs='0' name='id_no' type='xs:string'/>
+     <xs:element minOccurs='0' name='id_type' type='xs:string'/>
+     <xs:element minOccurs='0' name='id_type_name' type='xs:string'/>
+     <xs:element minOccurs='0' name='insertPassengerDate' type='xs:string'/>
+     <xs:element minOccurs='0' name='isUserSelf' type='xs:string'/>
+     <xs:element minOccurs='0' name='lasteDeleteDate' type='xs:string'/>
+     <xs:element minOccurs='0' name='mobile_no' type='xs:string'/>
+     <xs:element minOccurs='0' name='passenger_flag' type='xs:string'/>
+     <xs:element minOccurs='0' name='passenger_type' type='xs:string'/>
+     <xs:element minOccurs='0' name='passenger_type_name' type='xs:string'/>
+     <xs:element minOccurs='0' name='phone' type='xs:string'/>
+     <xs:element minOccurs='0' name='postalcode' type='xs:string'/>
+     <xs:element minOccurs='0' name='recordCount' type='xs:string'/>
+     <xs:element minOccurs='0' name='register_name' type='xs:string'/>
+     <xs:element minOccurs='0' name='sex_code' type='xs:string'/>
+     <xs:element minOccurs='0' name='sex_name' type='xs:string'/>
+     <xs:element minOccurs='0' name='user_name' type='xs:string'/>
+     <xs:element minOccurs='0' name='zzk_ccsj' type='xs:string'/>
+     <xs:element minOccurs='0' name='zzk_countryCode' type='xs:string'/>
+     <xs:element minOccurs='0' name='zzk_countryname' type='xs:string'/>
+     <xs:element minOccurs='0' name='zzk_id_no' type='xs:string'/>
+     <xs:element minOccurs='0' name='zzk_id_type' type='xs:string'/>
+     <xs:element minOccurs='0' name='zzk_id_type_name' type='xs:string'/>
+     <xs:element minOccurs='0' name='zzk_name' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='ICT_LogOutUser'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='commonHeader' type='tns:commonHeader'/>
+     <xs:element minOccurs='0' name='registerUser' type='tns:registerUser'/>
+     <xs:element minOccurs='0' name='tranData' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='ICT_LogOutUserResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='tns:responseEntityLogOutRegisterUser'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='responseEntityLogOutRegisterUser'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='header' type='tns:exceptionEntity'/>
+     <xs:element minOccurs='0' name='logoutuserDto' type='tns:logOutUserDTO'/>
+     <xs:element minOccurs='0' name='tranData' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='logOutUserDTO'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='logOutUserInfo' type='xs:string'/>
+     <xs:element minOccurs='0' name='log_off' type='xs:string'/>
+     <xs:element minOccurs='0' name='register_name' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='ICT_UpdateMobileStatus'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='commonHeader' type='tns:commonHeader'/>
+     <xs:element minOccurs='0' name='id_type' type='xs:string'/>
+     <xs:element minOccurs='0' name='id_no' type='xs:string'/>
+     <xs:element minOccurs='0' name='phone' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='ICT_UpdateMobileStatusResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='tns:responseEntityVerifyMobile'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='responseEntityVerifyMobile'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='checkMobileStatus' type='xs:string'/>
+     <xs:element minOccurs='0' name='header' type='tns:exceptionEntity'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='ICT_SynchronizedUserByRegister'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='commonHeader' type='tns:commonHeader'/>
+     <xs:element minOccurs='0' name='id_type' type='xs:string'/>
+     <xs:element minOccurs='0' name='id_no' type='xs:string'/>
+     <xs:element minOccurs='0' name='phone' type='xs:string'/>
+     <xs:element minOccurs='0' name='register_user_name' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='ICT_SynchronizedUserByRegisterResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='tns:responseEntityReisterUser'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='responseEntityReisterUser'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='checkStatus' type='xs:string'/>
+     <xs:element minOccurs='0' name='header' type='tns:exceptionEntity'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='ICT_VerifyRegisterUserStatus'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='commonHeader' type='tns:commonHeader'/>
+     <xs:element minOccurs='0' name='register_id_no' type='xs:string'/>
+     <xs:element minOccurs='0' name='register_name' type='xs:string'/>
+     <xs:element minOccurs='0' name='real_name' type='xs:string'/>
+     <xs:element minOccurs='0' name='id_type' type='xs:string'/>
+     <xs:element minOccurs='0' name='id_no' type='xs:string'/>
+     <xs:element minOccurs='0' name='country_code' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='ICT_VerifyRegisterUserStatusResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='tns:responseEntityReisterUser'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='ICT_QueryBlackList'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='commonHeader' type='tns:commonHeader'/>
+     <xs:element minOccurs='0' name='id_type' type='xs:string'/>
+     <xs:element minOccurs='0' name='id_number' type='xs:string'/>
+     <xs:element minOccurs='0' name='id_no_name' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='ICT_QueryBlackListResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='tns:responseEntityBlackList'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='responseEntityBlackList'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='header' type='tns:exceptionEntity'/>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='specialTicketList' nillable='true' type='tns:specialTicketLimit'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='specialTicketLimit'>
+    <xs:sequence>
+     <xs:element name='batch_no' type='xs:int'/>
+     <xs:element minOccurs='0' name='board_train_code' type='xs:string'/>
+     <xs:element minOccurs='0' name='check_flag' type='xs:string'/>
+     <xs:element minOccurs='0' name='coach_no' type='xs:string'/>
+     <xs:element minOccurs='0' name='control_flag' type='xs:string'/>
+     <xs:element minOccurs='0' name='create_time' type='xs:string'/>
+     <xs:element minOccurs='0' name='email' type='xs:string'/>
+     <xs:element minOccurs='0' name='flag1' type='xs:string'/>
+     <xs:element minOccurs='0' name='flag2' type='xs:string'/>
+     <xs:element minOccurs='0' name='flag3' type='xs:string'/>
+     <xs:element minOccurs='0' name='flag4' type='xs:string'/>
+     <xs:element minOccurs='0' name='flag5' type='xs:string'/>
+     <xs:element minOccurs='0' name='flag6' type='xs:string'/>
+     <xs:element minOccurs='0' name='from_station_name' type='xs:string'/>
+     <xs:element minOccurs='0' name='from_telecode' type='xs:string'/>
+     <xs:element minOccurs='0' name='login_name' type='xs:string'/>
+     <xs:element minOccurs='0' name='mobile_no' type='xs:string'/>
+     <xs:element minOccurs='0' name='online_resign' type='xs:string'/>
+     <xs:element minOccurs='0' name='online_return' type='xs:string'/>
+     <xs:element minOccurs='0' name='online_sale' type='xs:string'/>
+     <xs:element minOccurs='0' name='operation_type' type='xs:string'/>
+     <xs:element minOccurs='0' name='origin' type='xs:string'/>
+     <xs:element minOccurs='0' name='passenger_id_no' type='xs:string'/>
+     <xs:element minOccurs='0' name='passenger_id_type' type='xs:string'/>
+     <xs:element minOccurs='0' name='passenger_id_type_name' type='xs:string'/>
+     <xs:element minOccurs='0' name='passenger_name' type='xs:string'/>
+     <xs:element minOccurs='0' name='prompt_msg' type='xs:string'/>
+     <xs:element minOccurs='0' name='reserve_start_date' type='xs:string'/>
+     <xs:element minOccurs='0' name='reserve_stop_date' type='xs:string'/>
+     <xs:element minOccurs='0' name='reserve_time' type='xs:string'/>
+     <xs:element minOccurs='0' name='reserver_id_name' type='xs:string'/>
+     <xs:element minOccurs='0' name='reserver_id_no' type='xs:string'/>
+     <xs:element minOccurs='0' name='reserver_id_type' type='xs:string'/>
+     <xs:element minOccurs='0' name='seat_no' type='xs:string'/>
+     <xs:element minOccurs='0' name='seat_type_codes' type='xs:string'/>
+     <xs:element minOccurs='0' name='sequence_no' type='xs:string'/>
+     <xs:element minOccurs='0' name='start_date' type='xs:string'/>
+     <xs:element minOccurs='0' name='start_time' type='xs:string'/>
+     <xs:element minOccurs='0' name='start_train_date' type='xs:string'/>
+     <xs:element minOccurs='0' name='stop_date' type='xs:string'/>
+     <xs:element minOccurs='0' name='stop_train_date' type='xs:string'/>
+     <xs:element name='ticket_price' type='xs:int'/>
+     <xs:element minOccurs='0' name='ticket_type' type='xs:string'/>
+     <xs:element minOccurs='0' name='to_station_name' type='xs:string'/>
+     <xs:element minOccurs='0' name='to_telecode' type='xs:string'/>
+     <xs:element minOccurs='0' name='train_date' type='xs:string'/>
+     <xs:element minOccurs='0' name='train_no' type='xs:string'/>
+     <xs:element minOccurs='0' name='update_time' type='xs:string'/>
+     <xs:element minOccurs='0' name='use_flag' type='xs:string'/>
+     <xs:element minOccurs='0' name='win_print' type='xs:string'/>
+     <xs:element minOccurs='0' name='win_resign' type='xs:string'/>
+     <xs:element minOccurs='0' name='win_return' type='xs:string'/>
+     <xs:element minOccurs='0' name='win_sale' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='ICT_QueryBundlingMobile'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='commonHeader' type='tns:commonHeader'/>
+     <xs:element minOccurs='0' name='complaint_id_type' type='xs:string'/>
+     <xs:element minOccurs='0' name='complaint_id_no' type='xs:string'/>
+     <xs:element minOccurs='0' name='phone' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='ICT_QueryBundlingMobileResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='tns:responseEntityRegisterUser'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='ICT_UnbundlMobile'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='commonHeader' type='tns:commonHeader'/>
+     <xs:element minOccurs='0' name='id_type' type='xs:string'/>
+     <xs:element minOccurs='0' name='id_no' type='xs:string'/>
+     <xs:element minOccurs='0' name='phone' type='xs:string'/>
+     <xs:element minOccurs='0' name='tranData' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='ICT_UnbundlMobileResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='tns:responseEntityVerifyMobile'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='ICT_GetPhoneVerificationCode'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='commonHeader' type='tns:commonHeader'/>
+     <xs:element minOccurs='0' name='phone' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='ICT_GetPhoneVerificationCodeResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='tns:responseEntityPhoneVerificationCode'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='responseEntityPhoneVerificationCode'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='header' type='tns:exceptionEntity'/>
+     <xs:element minOccurs='0' name='verificationCode' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+  </xs:schema>
+ </types>
+ <message name='ManageUserInfoWebServiceWSDelegate_ICT_GetPhoneVerificationCode'>
+  <part element='tns:ICT_GetPhoneVerificationCode' name='ICT_GetPhoneVerificationCode'></part>
+ </message>
+ <message name='ManageUserInfoWebServiceWSDelegate_ICT_LogOutUserResponse'>
+  <part element='tns:ICT_LogOutUserResponse' name='ICT_LogOutUserResponse'></part>
+ </message>
+ <message name='ManageUserInfoWebServiceWSDelegate_ICT_QueryPassengerInfo'>
+  <part element='tns:ICT_QueryPassengerInfo' name='ICT_QueryPassengerInfo'></part>
+ </message>
+ <message name='ManageUserInfoWebServiceWSDelegate_ICT_UnbundlMobileResponse'>
+  <part element='tns:ICT_UnbundlMobileResponse' name='ICT_UnbundlMobileResponse'></part>
+ </message>
+ <message name='ManageUserInfoWebServiceWSDelegate_ICT_QueryBundlingMobileResponse'>
+  <part element='tns:ICT_QueryBundlingMobileResponse' name='ICT_QueryBundlingMobileResponse'></part>
+ </message>
+ <message name='ManageUserInfoWebServiceWSDelegate_ICT_VerifyRegisterUserStatusResponse'>
+  <part element='tns:ICT_VerifyRegisterUserStatusResponse' name='ICT_VerifyRegisterUserStatusResponse'></part>
+ </message>
+ <message name='ManageUserInfoWebServiceWSDelegate_ICT_GetPhoneVerificationCodeResponse'>
+  <part element='tns:ICT_GetPhoneVerificationCodeResponse' name='ICT_GetPhoneVerificationCodeResponse'></part>
+ </message>
+ <message name='ManageUserInfoWebServiceWSDelegate_ICT_QueryBlackListResponse'>
+  <part element='tns:ICT_QueryBlackListResponse' name='ICT_QueryBlackListResponse'></part>
+ </message>
+ <message name='ManageUserInfoWebServiceWSDelegate_ICT_UpdateMobileStatus'>
+  <part element='tns:ICT_UpdateMobileStatus' name='ICT_UpdateMobileStatus'></part>
+ </message>
+ <message name='ManageUserInfoWebServiceWSDelegate_ICT_UnbundlMobile'>
+  <part element='tns:ICT_UnbundlMobile' name='ICT_UnbundlMobile'></part>
+ </message>
+ <message name='ManageUserInfoWebServiceWSDelegate_ICT_UpdateMobileStatusResponse'>
+  <part element='tns:ICT_UpdateMobileStatusResponse' name='ICT_UpdateMobileStatusResponse'></part>
+ </message>
+ <message name='ManageUserInfoWebServiceWSDelegate_ICT_QueryBlackList'>
+  <part element='tns:ICT_QueryBlackList' name='ICT_QueryBlackList'></part>
+ </message>
+ <message name='ManageUserInfoWebServiceWSDelegate_ICT_SynchronizedUserByRegisterResponse'>
+  <part element='tns:ICT_SynchronizedUserByRegisterResponse' name='ICT_SynchronizedUserByRegisterResponse'></part>
+ </message>
+ <message name='ManageUserInfoWebServiceWSDelegate_ICT_SynchronizedUserByRegister'>
+  <part element='tns:ICT_SynchronizedUserByRegister' name='ICT_SynchronizedUserByRegister'></part>
+ </message>
+ <message name='ManageUserInfoWebServiceWSDelegate_ICT_VerifyRegisterUserStatus'>
+  <part element='tns:ICT_VerifyRegisterUserStatus' name='ICT_VerifyRegisterUserStatus'></part>
+ </message>
+ <message name='ManageUserInfoWebServiceWSDelegate_ICT_LogOutUser'>
+  <part element='tns:ICT_LogOutUser' name='ICT_LogOutUser'></part>
+ </message>
+ <message name='ManageUserInfoWebServiceWSDelegate_ICT_QueryBundlingMobile'>
+  <part element='tns:ICT_QueryBundlingMobile' name='ICT_QueryBundlingMobile'></part>
+ </message>
+ <message name='ManageUserInfoWebServiceWSDelegate_ICT_QueryPassengerInfoResponse'>
+  <part element='tns:ICT_QueryPassengerInfoResponse' name='ICT_QueryPassengerInfoResponse'></part>
+ </message>
+ <message name='ManageUserInfoWebServiceWSDelegate_ICT_QueryUserInfo'>
+  <part element='tns:ICT_QueryUserInfo' name='ICT_QueryUserInfo'></part>
+ </message>
+ <message name='ManageUserInfoWebServiceWSDelegate_ICT_QueryUserInfoResponse'>
+  <part element='tns:ICT_QueryUserInfoResponse' name='ICT_QueryUserInfoResponse'></part>
+ </message>
+ <portType name='ManageUserInfoWebServiceWSDelegate'>
+  <operation name='ICT_GetPhoneVerificationCode' parameterOrder='ICT_GetPhoneVerificationCode'>
+   <input message='tns:ManageUserInfoWebServiceWSDelegate_ICT_GetPhoneVerificationCode'></input>
+   <output message='tns:ManageUserInfoWebServiceWSDelegate_ICT_GetPhoneVerificationCodeResponse'></output>
+  </operation>
+  <operation name='ICT_LogOutUser' parameterOrder='ICT_LogOutUser'>
+   <input message='tns:ManageUserInfoWebServiceWSDelegate_ICT_LogOutUser'></input>
+   <output message='tns:ManageUserInfoWebServiceWSDelegate_ICT_LogOutUserResponse'></output>
+  </operation>
+  <operation name='ICT_QueryBlackList' parameterOrder='ICT_QueryBlackList'>
+   <input message='tns:ManageUserInfoWebServiceWSDelegate_ICT_QueryBlackList'></input>
+   <output message='tns:ManageUserInfoWebServiceWSDelegate_ICT_QueryBlackListResponse'></output>
+  </operation>
+  <operation name='ICT_QueryBundlingMobile' parameterOrder='ICT_QueryBundlingMobile'>
+   <input message='tns:ManageUserInfoWebServiceWSDelegate_ICT_QueryBundlingMobile'></input>
+   <output message='tns:ManageUserInfoWebServiceWSDelegate_ICT_QueryBundlingMobileResponse'></output>
+  </operation>
+  <operation name='ICT_QueryPassengerInfo' parameterOrder='ICT_QueryPassengerInfo'>
+   <input message='tns:ManageUserInfoWebServiceWSDelegate_ICT_QueryPassengerInfo'></input>
+   <output message='tns:ManageUserInfoWebServiceWSDelegate_ICT_QueryPassengerInfoResponse'></output>
+  </operation>
+  <operation name='ICT_QueryUserInfo' parameterOrder='ICT_QueryUserInfo'>
+   <input message='tns:ManageUserInfoWebServiceWSDelegate_ICT_QueryUserInfo'></input>
+   <output message='tns:ManageUserInfoWebServiceWSDelegate_ICT_QueryUserInfoResponse'></output>
+  </operation>
+  <operation name='ICT_SynchronizedUserByRegister' parameterOrder='ICT_SynchronizedUserByRegister'>
+   <input message='tns:ManageUserInfoWebServiceWSDelegate_ICT_SynchronizedUserByRegister'></input>
+   <output message='tns:ManageUserInfoWebServiceWSDelegate_ICT_SynchronizedUserByRegisterResponse'></output>
+  </operation>
+  <operation name='ICT_UnbundlMobile' parameterOrder='ICT_UnbundlMobile'>
+   <input message='tns:ManageUserInfoWebServiceWSDelegate_ICT_UnbundlMobile'></input>
+   <output message='tns:ManageUserInfoWebServiceWSDelegate_ICT_UnbundlMobileResponse'></output>
+  </operation>
+  <operation name='ICT_UpdateMobileStatus' parameterOrder='ICT_UpdateMobileStatus'>
+   <input message='tns:ManageUserInfoWebServiceWSDelegate_ICT_UpdateMobileStatus'></input>
+   <output message='tns:ManageUserInfoWebServiceWSDelegate_ICT_UpdateMobileStatusResponse'></output>
+  </operation>
+  <operation name='ICT_VerifyRegisterUserStatus' parameterOrder='ICT_VerifyRegisterUserStatus'>
+   <input message='tns:ManageUserInfoWebServiceWSDelegate_ICT_VerifyRegisterUserStatus'></input>
+   <output message='tns:ManageUserInfoWebServiceWSDelegate_ICT_VerifyRegisterUserStatusResponse'></output>
+  </operation>
+ </portType>
+ <binding name='ManageUserInfoWebServiceWSDelegateBinding' type='tns:ManageUserInfoWebServiceWSDelegate'>
+  <soap:binding style='document' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='ICT_GetPhoneVerificationCode'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='ICT_LogOutUser'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='ICT_QueryBlackList'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='ICT_QueryBundlingMobile'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='ICT_QueryPassengerInfo'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='ICT_QueryUserInfo'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='ICT_SynchronizedUserByRegister'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='ICT_UnbundlMobile'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='ICT_UpdateMobileStatus'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='ICT_VerifyRegisterUserStatus'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+ </binding>
+ <service name='ManageUserInfoWebServiceWS'>
+  <port binding='tns:ManageUserInfoWebServiceWSDelegateBinding' name='ManageUserInfoWebServiceWSDelegatePort'>
+   <soap:address location='http://eaccess.china-railway.com.cn:8000/mapping/kfshyypt4/ManageUserInfoWebServiceWS'/>
+  </port>
+ </service>
+</definitions>

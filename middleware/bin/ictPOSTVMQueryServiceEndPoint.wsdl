@@ -1,0 +1,191 @@
+<definitions name='queryPOSTVM' targetNamespace='http://ws.otsweb.ict.cars.com/queryPOSTVMServiceEndPoint' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://ws.otsweb.ict.cars.com/queryPOSTVMServiceEndPoint' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types>
+  <xs:schema targetNamespace='http://ws.otsweb.ict.cars.com/queryPOSTVMServiceEndPoint' version='1.0' xmlns:tns='http://ws.otsweb.ict.cars.com/queryPOSTVMServiceEndPoint' xmlns:xs='http://www.w3.org/2001/XMLSchema'>
+   <xs:element name='queryPOSTVM' type='tns:queryPOSTVM'/>
+   <xs:element name='queryPOSTVMByPassengerAndTrade' type='tns:queryPOSTVMByPassengerAndTrade'/>
+   <xs:element name='queryPOSTVMByPassengerAndTradeResponse' type='tns:queryPOSTVMByPassengerAndTradeResponse'/>
+   <xs:element name='queryPOSTVMResponse' type='tns:queryPOSTVMResponse'/>
+   <xs:complexType name='queryPOSTVM'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='saleDateFrom' type='xs:string'/>
+     <xs:element minOccurs='0' name='saleDataTo' type='xs:string'/>
+     <xs:element minOccurs='0' name='saleStation' type='xs:string'/>
+     <xs:element minOccurs='0' name='returnDateFrom' type='xs:string'/>
+     <xs:element minOccurs='0' name='returnDateTo' type='xs:string'/>
+     <xs:element minOccurs='0' name='returnStation' type='xs:string'/>
+     <xs:element minOccurs='0' name='saleMode' type='xs:string'/>
+     <xs:element minOccurs='0' name='queryType' type='xs:string'/>
+     <xs:element minOccurs='0' name='tradeNo' type='xs:string'/>
+     <xs:element minOccurs='0' name='ticket21info' type='xs:string'/>
+     <xs:element minOccurs='0' name='trainDate' type='xs:string'/>
+     <xs:element minOccurs='0' name='trainCode' type='xs:string'/>
+     <xs:element minOccurs='0' name='fromStationName' type='xs:string'/>
+     <xs:element minOccurs='0' name='toStationName' type='xs:string'/>
+     <xs:element minOccurs='0' name='coachNo' type='xs:string'/>
+     <xs:element minOccurs='0' name='seatNo' type='xs:string'/>
+     <xs:element minOccurs='0' name='ticketNo' type='xs:string'/>
+     <xs:element minOccurs='0' name='saleOffice' type='xs:string'/>
+     <xs:element minOccurs='0' name='idType' type='xs:string'/>
+     <xs:element minOccurs='0' name='idNo' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='queryPOSTVMResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='tns:ictQueryPOSTVMTransactionInfoByTicketInfoRes'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='ictQueryPOSTVMTransactionInfoByTicketInfoRes'>
+    <xs:complexContent>
+     <xs:extension base='tns:baseDomainObject'>
+      <xs:sequence>
+       <xs:element minOccurs='0' name='body' type='tns:bodyICTQueryPOSTVMTransactionInfoByTicketInfo'/>
+       <xs:element minOccurs='0' name='header' type='tns:ictHeader'/>
+      </xs:sequence>
+     </xs:extension>
+    </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType abstract='true' name='baseDomainObject'>
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name='bodyICTQueryPOSTVMTransactionInfoByTicketInfo'>
+    <xs:complexContent>
+     <xs:extension base='tns:baseDomainObject'>
+      <xs:sequence>
+       <xs:element maxOccurs='unbounded' minOccurs='0' name='listPOSTVMTransactionInfo' nillable='true' type='tns:boICTQueryPOSTVMTransactionInfoByTicketInfo'/>
+      </xs:sequence>
+     </xs:extension>
+    </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name='boICTQueryPOSTVMTransactionInfoByTicketInfo'>
+    <xs:complexContent>
+     <xs:extension base='tns:baseDomainObject'>
+      <xs:sequence>
+       <xs:element minOccurs='0' name='coachNo' type='xs:string'/>
+       <xs:element minOccurs='0' name='fromStationName' type='xs:string'/>
+       <xs:element minOccurs='0' name='newticket21info' type='xs:string'/>
+       <xs:element minOccurs='0' name='passengerIdNo' type='xs:string'/>
+       <xs:element minOccurs='0' name='passengerIdType' type='xs:string'/>
+       <xs:element minOccurs='0' name='passengerName' type='xs:string'/>
+       <xs:element maxOccurs='unbounded' minOccurs='0' name='payTransBeanList' nillable='true' type='tns:transBean'/>
+       <xs:element minOccurs='0' name='returnStationName' type='xs:string'/>
+       <xs:element minOccurs='0' name='returnTime' type='xs:string'/>
+       <xs:element minOccurs='0' name='returnWindow' type='xs:string'/>
+       <xs:element minOccurs='0' name='returnWindowOwner' type='xs:string'/>
+       <xs:element minOccurs='0' name='saleStationName' type='xs:string'/>
+       <xs:element minOccurs='0' name='saleTime' type='xs:string'/>
+       <xs:element minOccurs='0' name='saleWindow' type='xs:string'/>
+       <xs:element minOccurs='0' name='saleWindowOwner' type='xs:string'/>
+       <xs:element minOccurs='0' name='seatNo' type='xs:string'/>
+       <xs:element minOccurs='0' name='seatNoTmp' type='xs:string'/>
+       <xs:element minOccurs='0' name='seatTypeName' type='xs:string'/>
+       <xs:element minOccurs='0' name='startTime' type='xs:string'/>
+       <xs:element minOccurs='0' name='ticket21info' type='xs:string'/>
+       <xs:element minOccurs='0' name='ticketNum' type='xs:string'/>
+       <xs:element minOccurs='0' name='ticketPrice' type='xs:string'/>
+       <xs:element minOccurs='0' name='ticketPriceAll' type='xs:string'/>
+       <xs:element minOccurs='0' name='ticketStatus' type='xs:string'/>
+       <xs:element minOccurs='0' name='ticketTypeName' type='xs:string'/>
+       <xs:element minOccurs='0' name='toStationName' type='xs:string'/>
+       <xs:element minOccurs='0' name='tradeNo' type='xs:string'/>
+       <xs:element minOccurs='0' name='trainCode' type='xs:string'/>
+       <xs:element minOccurs='0' name='trainDate' type='xs:string'/>
+      </xs:sequence>
+     </xs:extension>
+    </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name='transBean'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='bankCode' type='xs:string'/>
+     <xs:element minOccurs='0' name='bankName' type='xs:string'/>
+     <xs:element minOccurs='0' name='tradeNo' type='xs:string'/>
+     <xs:element minOccurs='0' name='transAmount' type='xs:string'/>
+     <xs:element minOccurs='0' name='transDate' type='xs:string'/>
+     <xs:element minOccurs='0' name='transDesc' type='xs:string'/>
+     <xs:element minOccurs='0' name='transNo' type='xs:string'/>
+     <xs:element minOccurs='0' name='transStatus' type='xs:string'/>
+     <xs:element minOccurs='0' name='transType' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='ictHeader'>
+    <xs:complexContent>
+     <xs:extension base='tns:baseDomainObject'>
+      <xs:sequence>
+       <xs:element minOccurs='0' name='error' type='tns:errorType'/>
+       <xs:element minOccurs='0' name='success' type='xs:string'/>
+      </xs:sequence>
+     </xs:extension>
+    </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name='errorType'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='errorCode' type='xs:string'/>
+     <xs:element minOccurs='0' name='errorLevel' type='xs:string'/>
+     <xs:element minOccurs='0' name='errorMessage' type='xs:string'/>
+     <xs:element minOccurs='0' name='reason' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='queryPOSTVMByPassengerAndTrade'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='saleDateFrom' type='xs:string'/>
+     <xs:element minOccurs='0' name='saleDataTo' type='xs:string'/>
+     <xs:element minOccurs='0' name='idType' type='xs:string'/>
+     <xs:element minOccurs='0' name='idNo' type='xs:string'/>
+     <xs:element minOccurs='0' name='tradeNo' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='queryPOSTVMByPassengerAndTradeResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='tns:ictQueryPOSTVMTransactionInfoByTicketInfoRes'/>
+    </xs:sequence>
+   </xs:complexType>
+  </xs:schema>
+ </types>
+ <message name='ICTPOSTVMQueryServiceEndPoint_queryPOSTVMByPassengerAndTradeResponse'>
+  <part element='tns:queryPOSTVMByPassengerAndTradeResponse' name='queryPOSTVMByPassengerAndTradeResponse'></part>
+ </message>
+ <message name='ICTPOSTVMQueryServiceEndPoint_queryPOSTVMResponse'>
+  <part element='tns:queryPOSTVMResponse' name='queryPOSTVMResponse'></part>
+ </message>
+ <message name='ICTPOSTVMQueryServiceEndPoint_queryPOSTVM'>
+  <part element='tns:queryPOSTVM' name='queryPOSTVM'></part>
+ </message>
+ <message name='ICTPOSTVMQueryServiceEndPoint_queryPOSTVMByPassengerAndTrade'>
+  <part element='tns:queryPOSTVMByPassengerAndTrade' name='queryPOSTVMByPassengerAndTrade'></part>
+ </message>
+ <portType name='ICTPOSTVMQueryServiceEndPoint'>
+  <operation name='queryPOSTVM' parameterOrder='queryPOSTVM'>
+   <input message='tns:ICTPOSTVMQueryServiceEndPoint_queryPOSTVM'></input>
+   <output message='tns:ICTPOSTVMQueryServiceEndPoint_queryPOSTVMResponse'></output>
+  </operation>
+  <operation name='queryPOSTVMByPassengerAndTrade' parameterOrder='queryPOSTVMByPassengerAndTrade'>
+   <input message='tns:ICTPOSTVMQueryServiceEndPoint_queryPOSTVMByPassengerAndTrade'></input>
+   <output message='tns:ICTPOSTVMQueryServiceEndPoint_queryPOSTVMByPassengerAndTradeResponse'></output>
+  </operation>
+ </portType>
+ <binding name='ICTPOSTVMQueryServiceEndPointBinding' type='tns:ICTPOSTVMQueryServiceEndPoint'>
+  <soap:binding style='document' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='queryPOSTVM'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='queryPOSTVMByPassengerAndTrade'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+ </binding>
+ <service name='queryPOSTVM'>
+  <port binding='tns:ICTPOSTVMQueryServiceEndPointBinding' name='ICTPOSTVMQueryServiceEndPointPort'>
+   <soap:address location='http://eaccess.china-railway.com.cn:8000/mapping/kfshyypt3/ictPOSTVMQueryServiceEndPoint?wsdl'/>
+  </port>
+ </service>
+</definitions>

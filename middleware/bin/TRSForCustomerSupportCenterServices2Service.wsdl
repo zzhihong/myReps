@@ -1,0 +1,381 @@
+<definitions name='TRSForCustomerSupportCenterServices2Service' targetNamespace='http://TRSForCustomerSupportCenterServices2Service' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://TRSForCustomerSupportCenterServices2Service' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types>
+  <xs:schema targetNamespace='http://TRSForCustomerSupportCenterServices2Service' version='1.0' xmlns:tns='http://TRSForCustomerSupportCenterServices2Service' xmlns:xs='http://www.w3.org/2001/XMLSchema'>
+   <xs:element name='ICT_OrderInfoByUser' type='tns:ICT_OrderInfoByUser'/>
+   <xs:element name='ICT_OrderInfoByUserResponse' type='tns:ICT_OrderInfoByUserResponse'/>
+   <xs:element name='ICT_QueryAccidentInsurance' type='tns:ICT_QueryAccidentInsurance'/>
+   <xs:element name='ICT_QueryAccidentInsuranceResponse' type='tns:ICT_QueryAccidentInsuranceResponse'/>
+   <xs:element name='queryCheckTicketInfo' type='tns:queryCheckTicketInfo'/>
+   <xs:element name='queryCheckTicketInfoResponse' type='tns:queryCheckTicketInfoResponse'/>
+   <xs:complexType name='ICT_OrderInfoByUser'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='iCT_OrderInfoByUserRQ2' type='tns:ictOrderInfoByUserRQ2'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='ictOrderInfoByUserRQ2'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='passengerIDType' type='xs:string'/>
+     <xs:element minOccurs='0' name='passengerIdNo' type='xs:string'/>
+     <xs:element minOccurs='0' name='platSequenceNo' type='xs:string'/>
+     <xs:element minOccurs='0' name='reserveTimeFrom' type='xs:string'/>
+     <xs:element minOccurs='0' name='reserveTimeTo' type='xs:string'/>
+     <xs:element minOccurs='0' name='reserverIDType' type='xs:string'/>
+     <xs:element minOccurs='0' name='reserverIdNo' type='xs:string'/>
+     <xs:element minOccurs='0' name='saleMode' type='xs:string'/>
+     <xs:element minOccurs='0' name='sequenceNo' type='xs:string'/>
+     <xs:element minOccurs='0' name='trainDate' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='ICT_OrderInfoByUserResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='tns:ictOrderInfoByUserRS2'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='ictOrderInfoByUserRS2'>
+    <xs:sequence>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='body' nillable='true' type='tns:ictOrderInfoByUserBO2'/>
+     <xs:element minOccurs='0' name='header' type='tns:serviceHeader'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='ictOrderInfoByUserBO2'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='batchNo' type='xs:string'/>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='listPayInfo' nillable='true' type='tns:ictQueryOrderPayInfoBO2'/>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='listPaymentPayInfo' nillable='true' type='tns:paymentRS2'/>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='listTickets' nillable='true' type='tns:ticketBO2'/>
+     <xs:element minOccurs='0' name='registerName' type='xs:string'/>
+     <xs:element minOccurs='0' name='reserveDate' type='xs:string'/>
+     <xs:element minOccurs='0' name='reserveTime' type='xs:string'/>
+     <xs:element minOccurs='0' name='sequenceNo' type='xs:string'/>
+     <xs:element minOccurs='0' name='ticketNum' type='xs:string'/>
+     <xs:element minOccurs='0' name='ticketPriceAll' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='ictQueryOrderPayInfoBO2'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='tradeNo' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='paymentRS2'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='bankCode' type='xs:string'/>
+     <xs:element minOccurs='0' name='bankName' type='xs:string'/>
+     <xs:element minOccurs='0' name='tradeNo' type='xs:string'/>
+     <xs:element minOccurs='0' name='transAmount' type='xs:string'/>
+     <xs:element minOccurs='0' name='transDate' type='xs:string'/>
+     <xs:element minOccurs='0' name='transDesc' type='xs:string'/>
+     <xs:element minOccurs='0' name='transNo' type='xs:string'/>
+     <xs:element minOccurs='0' name='transStatus' type='xs:string'/>
+     <xs:element minOccurs='0' name='transType' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='ticketBO2'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='batch_no' type='xs:string'/>
+     <xs:element minOccurs='0' name='coachNo' type='xs:string'/>
+     <xs:element minOccurs='0' name='fetchStationName' type='xs:string'/>
+     <xs:element minOccurs='0' name='fetchTime' type='xs:string'/>
+     <xs:element minOccurs='0' name='fetchWindow' type='xs:string'/>
+     <xs:element minOccurs='0' name='fetchWindowOwner' type='xs:string'/>
+     <xs:element minOccurs='0' name='fromStationName' type='xs:string'/>
+     <xs:element minOccurs='0' name='from_tele_code' type='xs:string'/>
+     <xs:element minOccurs='0' name='passengerIdNo' type='xs:string'/>
+     <xs:element minOccurs='0' name='passengerIdType' type='xs:string'/>
+     <xs:element minOccurs='0' name='passengerIdTypeName' type='xs:string'/>
+     <xs:element minOccurs='0' name='passengerName' type='xs:string'/>
+     <xs:element minOccurs='0' name='passenger_id_no_str' type='xs:string'/>
+     <xs:element minOccurs='0' name='print_center' type='xs:string'/>
+     <xs:element minOccurs='0' name='print_date' type='xs:string'/>
+     <xs:element minOccurs='0' name='seatNo' type='xs:string'/>
+     <xs:element minOccurs='0' name='seatTypeName' type='xs:string'/>
+     <xs:element minOccurs='0' name='startTime' type='xs:string'/>
+     <xs:element minOccurs='0' name='statusCode' type='xs:string'/>
+     <xs:element minOccurs='0' name='theline_resign_coach_no' type='xs:string'/>
+     <xs:element minOccurs='0' name='theline_resign_seat_no' type='xs:string'/>
+     <xs:element minOccurs='0' name='theline_resign_station_name' type='xs:string'/>
+     <xs:element minOccurs='0' name='theline_resign_ticket_price' type='xs:string'/>
+     <xs:element minOccurs='0' name='theline_resign_ticket_status' type='xs:string'/>
+     <xs:element minOccurs='0' name='theline_resign_time' type='xs:string'/>
+     <xs:element minOccurs='0' name='theline_resign_train_code' type='xs:string'/>
+     <xs:element minOccurs='0' name='theline_resign_train_date' type='xs:string'/>
+     <xs:element minOccurs='0' name='theline_resign_window' type='xs:string'/>
+     <xs:element minOccurs='0' name='theline_resign_window_owner' type='xs:string'/>
+     <xs:element minOccurs='0' name='theline_return_station_name' type='xs:string'/>
+     <xs:element minOccurs='0' name='theline_return_ticket_status' type='xs:string'/>
+     <xs:element minOccurs='0' name='theline_return_time' type='xs:string'/>
+     <xs:element minOccurs='0' name='theline_return_window' type='xs:string'/>
+     <xs:element minOccurs='0' name='theline_return_window_owner' type='xs:string'/>
+     <xs:element minOccurs='0' name='ticketNo' type='xs:string'/>
+     <xs:element minOccurs='0' name='ticketPrice' type='xs:string'/>
+     <xs:element minOccurs='0' name='ticketStatus' type='xs:string'/>
+     <xs:element minOccurs='0' name='ticketTypeName' type='xs:string'/>
+     <xs:element minOccurs='0' name='toStationName' type='xs:string'/>
+     <xs:element minOccurs='0' name='to_tele_code' type='xs:string'/>
+     <xs:element minOccurs='0' name='trainCode' type='xs:string'/>
+     <xs:element minOccurs='0' name='trainDate' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='serviceHeader'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='error' type='tns:errorType'/>
+     <xs:element minOccurs='0' name='success' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='errorType'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='errorCode' type='xs:string'/>
+     <xs:element minOccurs='0' name='errorLevel' type='xs:string'/>
+     <xs:element minOccurs='0' name='errorMessage' type='xs:string'/>
+     <xs:element minOccurs='0' name='reason' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='queryCheckTicketInfo'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='train_date' type='xs:string'/>
+     <xs:element minOccurs='0' name='station_train_code' type='xs:string'/>
+     <xs:element minOccurs='0' name='station_telecode' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='queryCheckTicketInfoResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='tns:ictCheckTicketPlatForm'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='ictCheckTicketPlatForm'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='header' type='tns:exceptionEntity'/>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='trainPlatFormList' nillable='true' type='tns:wb10TrainPlatform'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='exceptionEntity'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='errorCode' type='xs:string'/>
+     <xs:element minOccurs='0' name='errorMessage' type='xs:string'/>
+     <xs:element minOccurs='0' name='status' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='wb10TrainPlatform'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='from_coach_no' type='xs:string'/>
+     <xs:element minOccurs='0' name='origin' type='xs:string'/>
+     <xs:element minOccurs='0' name='platform_no' type='xs:string'/>
+     <xs:element minOccurs='0' name='platform_type' type='xs:string'/>
+     <xs:element minOccurs='0' name='platform_type_name' type='xs:string'/>
+     <xs:element minOccurs='0' name='start_date' type='xs:string'/>
+     <xs:element minOccurs='0' name='station_name' type='xs:string'/>
+     <xs:element minOccurs='0' name='station_no' type='xs:string'/>
+     <xs:element minOccurs='0' name='station_telecode' type='xs:string'/>
+     <xs:element minOccurs='0' name='station_train_code' type='xs:string'/>
+     <xs:element minOccurs='0' name='stop_date' type='xs:string'/>
+     <xs:element name='stop_rule' type='xs:int'/>
+     <xs:element name='stop_style' type='xs:int'/>
+     <xs:element minOccurs='0' name='to_coach_no' type='xs:string'/>
+     <xs:element minOccurs='0' name='train_no' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='ICT_QueryAccidentInsurance'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='commonHeader' type='tns:commonHeader'/>
+     <xs:element minOccurs='0' name='sale_start_date' type='xs:string'/>
+     <xs:element minOccurs='0' name='sale_end_date' type='xs:string'/>
+     <xs:element minOccurs='0' name='insure_id_type' type='xs:string'/>
+     <xs:element minOccurs='0' name='insure_id_no' type='xs:string'/>
+     <xs:element minOccurs='0' name='insurance_no' type='xs:string'/>
+     <xs:element minOccurs='0' name='sequence_no' type='xs:string'/>
+     <xs:element minOccurs='0' name='login_name' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='commonHeader'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='bureau_code' type='xs:string'/>
+     <xs:element minOccurs='0' name='operatorNo' type='xs:string'/>
+     <xs:element minOccurs='0' name='srcIP' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='ICT_QueryAccidentInsuranceResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='tns:ictInsuranceRRT'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='ictInsuranceRRT'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='header' type='tns:exceptionEntity'/>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='insuranceRRTList' nillable='true' type='tns:insuranceRRT'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='insuranceRRT'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='agency_code' type='xs:string'/>
+     <xs:element name='batch_no' type='xs:int'/>
+     <xs:element minOccurs='0' name='board_train_code' type='xs:string'/>
+     <xs:element minOccurs='0' name='children_effect_flag' type='xs:string'/>
+     <xs:element minOccurs='0' name='children_insure_no' type='xs:string'/>
+     <xs:element minOccurs='0' name='city_code' type='xs:string'/>
+     <xs:element minOccurs='0' name='city_name' type='xs:string'/>
+     <xs:element minOccurs='0' name='coach_no' type='xs:string'/>
+     <xs:element minOccurs='0' name='company_code' type='xs:string'/>
+     <xs:element minOccurs='0' name='day_night' type='xs:string'/>
+     <xs:element minOccurs='0' name='db_name' type='xs:string'/>
+     <xs:element minOccurs='0' name='email' type='xs:string'/>
+     <xs:element minOccurs='0' name='end_date' type='xs:string'/>
+     <xs:element minOccurs='0' name='end_station_name' type='xs:string'/>
+     <xs:element minOccurs='0' name='end_station_telecode' type='xs:string'/>
+     <xs:element minOccurs='0' name='end_time' type='xs:string'/>
+     <xs:element minOccurs='0' name='flag1' type='xs:string'/>
+     <xs:element minOccurs='0' name='flag2' type='xs:string'/>
+     <xs:element minOccurs='0' name='flag3' type='xs:string'/>
+     <xs:element minOccurs='0' name='flag4' type='xs:string'/>
+     <xs:element minOccurs='0' name='flag5' type='xs:string'/>
+     <xs:element minOccurs='0' name='flag6' type='xs:string'/>
+     <xs:element minOccurs='0' name='from_station_name' type='xs:string'/>
+     <xs:element minOccurs='0' name='from_tele_code' type='xs:string'/>
+     <xs:element minOccurs='0' name='insure_code' type='xs:string'/>
+     <xs:element minOccurs='0' name='insure_mode' type='xs:string'/>
+     <xs:element minOccurs='0' name='insure_no' type='xs:string'/>
+     <xs:element name='insure_num' type='xs:int'/>
+     <xs:element name='insure_price' type='xs:int'/>
+     <xs:element name='insure_single_price' type='xs:int'/>
+     <xs:element minOccurs='0' name='insure_status' type='xs:string'/>
+     <xs:element minOccurs='0' name='insure_status_name' type='xs:string'/>
+     <xs:element minOccurs='0' name='insure_status_record' type='xs:string'/>
+     <xs:element minOccurs='0' name='insure_trade_no' type='xs:string'/>
+     <xs:element minOccurs='0' name='insure_type' type='xs:string'/>
+     <xs:element minOccurs='0' name='insure_type_name' type='xs:string'/>
+     <xs:element minOccurs='0' name='invoice_status' type='xs:string'/>
+     <xs:element minOccurs='0' name='login_name' type='xs:string'/>
+     <xs:element minOccurs='0' name='mobile_no' type='xs:string'/>
+     <xs:element minOccurs='0' name='node_code' type='xs:string'/>
+     <xs:element minOccurs='0' name='office_no' type='xs:string'/>
+     <xs:element minOccurs='0' name='operater_no' type='xs:string'/>
+     <xs:element minOccurs='0' name='passenger_id_no' type='xs:string'/>
+     <xs:element minOccurs='0' name='passenger_id_type' type='xs:string'/>
+     <xs:element minOccurs='0' name='passenger_id_type_name' type='xs:string'/>
+     <xs:element minOccurs='0' name='passenger_mobile_no' type='xs:string'/>
+     <xs:element minOccurs='0' name='passenger_name' type='xs:string'/>
+     <xs:element minOccurs='0' name='print_office_no' type='xs:string'/>
+     <xs:element minOccurs='0' name='print_operater_no' type='xs:string'/>
+     <xs:element minOccurs='0' name='print_station' type='xs:string'/>
+     <xs:element minOccurs='0' name='print_statistics_date' type='xs:string'/>
+     <xs:element minOccurs='0' name='print_time' type='xs:string'/>
+     <xs:element name='print_window_no' type='xs:int'/>
+     <xs:element minOccurs='0' name='product_code' type='xs:string'/>
+     <xs:element minOccurs='0' name='province_code' type='xs:string'/>
+     <xs:element minOccurs='0' name='province_name' type='xs:string'/>
+     <xs:element minOccurs='0' name='regain_office_no' type='xs:string'/>
+     <xs:element minOccurs='0' name='regain_operater_no' type='xs:string'/>
+     <xs:element minOccurs='0' name='regain_station' type='xs:string'/>
+     <xs:element minOccurs='0' name='regain_statistics_date' type='xs:string'/>
+     <xs:element minOccurs='0' name='regain_time' type='xs:string'/>
+     <xs:element name='regain_window_no' type='xs:int'/>
+     <xs:element minOccurs='0' name='reserve_time' type='xs:string'/>
+     <xs:element minOccurs='0' name='reserver_id_no' type='xs:string'/>
+     <xs:element minOccurs='0' name='reserver_id_type' type='xs:string'/>
+     <xs:element minOccurs='0' name='reserver_id_type_name' type='xs:string'/>
+     <xs:element minOccurs='0' name='reserver_name' type='xs:string'/>
+     <xs:element name='resign_batch_no' type='xs:int'/>
+     <xs:element minOccurs='0' name='resign_coach_no' type='xs:string'/>
+     <xs:element minOccurs='0' name='resign_seat_no' type='xs:string'/>
+     <xs:element minOccurs='0' name='resign_ticket_no' type='xs:string'/>
+     <xs:element minOccurs='0' name='return_insure_no' type='xs:string'/>
+     <xs:element minOccurs='0' name='return_insure_station' type='xs:string'/>
+     <xs:element minOccurs='0' name='return_insure_time' type='xs:string'/>
+     <xs:element name='return_insure_window' type='xs:int'/>
+     <xs:element minOccurs='0' name='return_mode' type='xs:string'/>
+     <xs:element minOccurs='0' name='reurn_trade_no' type='xs:string'/>
+     <xs:element minOccurs='0' name='sale_insure_station' type='xs:string'/>
+     <xs:element minOccurs='0' name='sale_mode' type='xs:string'/>
+     <xs:element minOccurs='0' name='sale_time' type='xs:string'/>
+     <xs:element minOccurs='0' name='seat_no' type='xs:string'/>
+     <xs:element minOccurs='0' name='seat_type_code' type='xs:string'/>
+     <xs:element minOccurs='0' name='seat_type_name' type='xs:string'/>
+     <xs:element minOccurs='0' name='sequence_no' type='xs:string'/>
+     <xs:element minOccurs='0' name='start_date' type='xs:string'/>
+     <xs:element minOccurs='0' name='start_station_name' type='xs:string'/>
+     <xs:element minOccurs='0' name='start_station_telecode' type='xs:string'/>
+     <xs:element minOccurs='0' name='start_time' type='xs:string'/>
+     <xs:element minOccurs='0' name='statistics_date' type='xs:string'/>
+     <xs:element minOccurs='0' name='ticket_no' type='xs:string'/>
+     <xs:element minOccurs='0' name='ticket_state' type='xs:string'/>
+     <xs:element minOccurs='0' name='ticket_state_name' type='xs:string'/>
+     <xs:element name='ticket_type' type='xs:int'/>
+     <xs:element minOccurs='0' name='to_station_name' type='xs:string'/>
+     <xs:element minOccurs='0' name='to_tele_code' type='xs:string'/>
+     <xs:element minOccurs='0' name='train_code' type='xs:string'/>
+     <xs:element minOccurs='0' name='train_date' type='xs:string'/>
+     <xs:element minOccurs='0' name='transmit_flag' type='xs:string'/>
+     <xs:element minOccurs='0' name='transmit_id' type='xs:string'/>
+     <xs:element minOccurs='0' name='update_time' type='xs:string'/>
+     <xs:element minOccurs='0' name='update_time_record' type='xs:string'/>
+     <xs:element name='window_no' type='xs:int'/>
+    </xs:sequence>
+   </xs:complexType>
+  </xs:schema>
+ </types>
+ <message name='TRSForCustomerSupportCenterServices2Delegate_ICT_QueryAccidentInsuranceResponse'>
+  <part element='tns:ICT_QueryAccidentInsuranceResponse' name='ICT_QueryAccidentInsuranceResponse'></part>
+ </message>
+ <message name='TRSForCustomerSupportCenterServices2Delegate_queryCheckTicketInfo'>
+  <part element='tns:queryCheckTicketInfo' name='queryCheckTicketInfo'></part>
+ </message>
+ <message name='TRSForCustomerSupportCenterServices2Delegate_ICT_OrderInfoByUserResponse'>
+  <part element='tns:ICT_OrderInfoByUserResponse' name='ICT_OrderInfoByUserResponse'></part>
+ </message>
+ <message name='TRSForCustomerSupportCenterServices2Delegate_ICT_OrderInfoByUser'>
+  <part element='tns:ICT_OrderInfoByUser' name='ICT_OrderInfoByUser'></part>
+ </message>
+ <message name='TRSForCustomerSupportCenterServices2Delegate_queryCheckTicketInfoResponse'>
+  <part element='tns:queryCheckTicketInfoResponse' name='queryCheckTicketInfoResponse'></part>
+ </message>
+ <message name='TRSForCustomerSupportCenterServices2Delegate_ICT_QueryAccidentInsurance'>
+  <part element='tns:ICT_QueryAccidentInsurance' name='ICT_QueryAccidentInsurance'></part>
+ </message>
+ <portType name='TRSForCustomerSupportCenterServices2Delegate'>
+  <operation name='ICT_OrderInfoByUser' parameterOrder='ICT_OrderInfoByUser'>
+   <input message='tns:TRSForCustomerSupportCenterServices2Delegate_ICT_OrderInfoByUser'></input>
+   <output message='tns:TRSForCustomerSupportCenterServices2Delegate_ICT_OrderInfoByUserResponse'></output>
+  </operation>
+  <operation name='ICT_QueryAccidentInsurance' parameterOrder='ICT_QueryAccidentInsurance'>
+   <input message='tns:TRSForCustomerSupportCenterServices2Delegate_ICT_QueryAccidentInsurance'></input>
+   <output message='tns:TRSForCustomerSupportCenterServices2Delegate_ICT_QueryAccidentInsuranceResponse'></output>
+  </operation>
+  <operation name='queryCheckTicketInfo' parameterOrder='queryCheckTicketInfo'>
+   <input message='tns:TRSForCustomerSupportCenterServices2Delegate_queryCheckTicketInfo'></input>
+   <output message='tns:TRSForCustomerSupportCenterServices2Delegate_queryCheckTicketInfoResponse'></output>
+  </operation>
+ </portType>
+ <binding name='TRSForCustomerSupportCenterServices2DelegateBinding' type='tns:TRSForCustomerSupportCenterServices2Delegate'>
+  <soap:binding style='document' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='ICT_OrderInfoByUser'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='ICT_QueryAccidentInsurance'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='queryCheckTicketInfo'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+ </binding>
+ <service name='TRSForCustomerSupportCenterServices2Service'>
+  <port binding='tns:TRSForCustomerSupportCenterServices2DelegateBinding' name='TRSForCustomerSupportCenterServices2DelegatePort'>
+   <soap:address location='http://eaccess.china-railway.com.cn:8000/mapping/kfshyypt4/TRSForCustomerSupportCenterServices2Service'/>
+  </port>
+ </service>
+</definitions>

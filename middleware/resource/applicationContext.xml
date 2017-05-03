@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:jdbc="http://www.springframework.org/schema/jdbc"  
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+		http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-3.2.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.2.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
+		http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa-1.3.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
+		
+	<!-- 安全平台配置       -->
+    <bean id="mySSLSocketFactory" class="com.chunyv.ssl.factory.MySSLSocketFactory" init-method="init" scope="singleton">
+    	<!-- <property name="certFile"><value type="java.io.File">/home/weblogic/keystore.mor</value></property> -->
+    	<property name="certFile"><value type="java.io.File">c://keystore.mor</value></property>
+    	<property name="certPassWord" value="12345678"/>
+    </bean>
+    
+    <bean id="tokenHandler" class="com.chunyv.token.TokenHandler" scope="singleton">
+    	<property name="amHost" value="eaccess.china-railway.com.cn"/>
+    	<property name="msf" ref="mySSLSocketFactory"/>
+    </bean>
+    
+    <bean id="tokenTimerHandler" class="com.chunyv.token.TokenTimerHandler" init-method="init" destroy-method="destory" scope="singleton">
+    	<property name="tokenHandler" ref="tokenHandler"/>
+    	<property name="tokenUpdateTime"  >
+            <value type="java.lang.Long">660</value>    
+        </property>
+    	<property name="tokenUpdateFastTime"  >
+            <value type="java.lang.Long">1</value>    
+        </property>
+    </bean>
+    
+    <bean id="myHandlerResolver" class="com.chunyv.ws.handler.MyHandlerResolver" autowire="byType" scope="prototype">
+    	<property name="tokenHandler" ref="tokenTimerHandler"></property>
+    </bean>
+		
+</beans>
